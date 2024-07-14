@@ -752,6 +752,10 @@ func getSlotDiffs(input slotInput, dayOfTheWeek string, every int) (*map[int]ava
 
 	requestedSlotDuration := input.SlotConfig.SlotDuration
 
+	if _, ok := durationToInt[requestedSlotDuration]; !ok {
+		return nil, nil, errors.New("unsupported duration")
+	}
+
 	userSlot := make(map[int]availabilityStatus)
 	userSlotInfo := make(map[int]availabilityInfo)
 

@@ -1,0 +1,194 @@
+{
+	"info": {
+		"_postman_id": "a8485e63-0ed2-4d00-8386-5c740f0d0a56",
+		"name": "go-harbor",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22925642"
+	},
+	"item": [
+		{
+			"name": "create user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"karthik\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://server-morning-hill-2045.fly.dev/v1/create-user",
+					"protocol": "https",
+					"host": [
+						"server-morning-hill-2045",
+						"fly",
+						"dev"
+					],
+					"path": [
+						"v1",
+						"create-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "set availability",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": \"<user_id>\",\n    \"day\": \"monday\",\n    \"start_time_hour\": 11,\n    \"start_time_minutes\": 0,\n    \"end_time_hour\": 21,\n    \"end_time_minutes\": 0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://server-morning-hill-2045.fly.dev/v1/user/set-availability",
+					"protocol": "https",
+					"host": [
+						"server-morning-hill-2045",
+						"fly",
+						"dev"
+					],
+					"path": [
+						"v1",
+						"user",
+						"set-availability"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "view schedule",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": <user_id>,\n    \"date\": \"2024-07-15\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://server-morning-hill-2045.fly.dev/v1/user/view-schedule",
+					"protocol": "https",
+					"host": [
+						"server-morning-hill-2045",
+						"fly",
+						"dev"
+					],
+					"path": [
+						"v1",
+						"user",
+						"view-schedule"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find an available slot on your peer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id_1\": <your_user_id>,\n    \"user_id_2\": <your_peer_user_id>,\n    \"date\": \"2024-07-15\",\n    \"slot_lookup_config\": {\n        \"slot_duration\": \"half-hourly\",\n        \"search_every\": 30\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://server-morning-hill-2045.fly.dev/v1/user/find-available-slots",
+					"protocol": "https",
+					"host": [
+						"server-morning-hill-2045",
+						"fly",
+						"dev"
+					],
+					"path": [
+						"v1",
+						"user",
+						"find-available-slots"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "book a slot on your peer's calendar",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id_1\": <your_user_id>,\n    \"user_id_2\": <your_peer_user_id>,\n    \"date\": \"2024-07-15\",\n    \"slot\": \"14:30\",\n    \"slot_lookup_config\": {\n        \"slot_duration\": \"half-hourly\",\n        \"search_every\": 30\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://server-morning-hill-2045.fly.dev/v1/user/book-slot",
+					"protocol": "https",
+					"host": [
+						"server-morning-hill-2045",
+						"fly",
+						"dev"
+					],
+					"path": [
+						"v1",
+						"user",
+						"book-slot"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
