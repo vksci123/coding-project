@@ -17,3 +17,9 @@ API server is written in Go
 Postman collection is exported [here](./go-harbor.postman_collection.json)
 
 ## Database design
+
+Design is as follows
+
+![API design](./go-harbor.png)
+
+## Live API

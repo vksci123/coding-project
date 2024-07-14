@@ -434,6 +434,13 @@ func bookSlot(c *gin.Context) {
 		})
 		return
 	}
+	if bookInput.UserID1 == bookInput.UserID2 {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"status":  "error",
+			"message": "User 1 and User 2 cannot be same",
+		})
+		return
+	}
 
 	// Parse the date
 	layout := "2006-01-02"
@@ -566,6 +573,14 @@ func findAvailableSlots(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{
 			"status":  "error",
 			"message": "invalid request body",
+		})
+		return
+	}
+
+	if findSlotInput.UserID1 == findSlotInput.UserID2 {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"status":  "error",
+			"message": "User 1 and User 2 cannot be same",
 		})
 		return
 	}
