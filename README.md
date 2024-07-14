@@ -95,3 +95,5 @@ go run main.go
 ```
 
 - Any good engineer will make hacks when necessary - what are your hacks and why?
+
+1. As mentioned in the trade-off's, its probably a hack to make it work and demonstrate the capabilities.
