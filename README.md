@@ -28,7 +28,11 @@ API is deployed to fly (heroku alternative) and the url is [here](https://server
 Please checkout postman doc for more info about each API's.
 
 In summary we have
-/v1/create-user -- {"name": "<name of the user"}
+`/v1/create-user` 
+
+Body: ```json
+{"name": "<name of the user"}
+```
 
 /v1/user/set-availability -- {"user_id": "<user_id>", "day": <monday, tuesday, wednesday, thursday, friday, saturday, sunday>, "start_time_hour": 14, "start_time_minutes": 0, "end_time_hour": 21, "end_time_minutes": 0}
 
