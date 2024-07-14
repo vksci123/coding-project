@@ -28,9 +28,9 @@ API is deployed to fly (heroku alternative) and the url is [here](https://server
 Please checkout postman doc for more info about each API's.
 
 In summary we have
-`/v1/create-user` 
+1. `/v1/create-user` 
 
-Body: ```json
+Body: ```
 {"name": "<name of the user"}
 ```
 
